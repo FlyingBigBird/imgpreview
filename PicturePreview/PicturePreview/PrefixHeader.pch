@@ -1,0 +1,30 @@
+//
+//  PrefixHeader.pch
+//  PicturePreview
+//
+//  Created by BaoBaoDaRen on 2019/7/24.
+//  Copyright © 2019 Boris. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+//#import "UIDefine.h"
+//#import "SWCommonMacro.h"
+//#import "NSObject+SwizzleMethod.h"
+#import "PreviewList.h"
+
+#endif
+
+
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+
+
+
+
+#endif /* PrefixHeader_pch */

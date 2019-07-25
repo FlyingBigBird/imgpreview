@@ -192,9 +192,6 @@ static NSString * cellRes = @"preCellStr";
 {
     [super layoutSubviews];
     
-    
-    self.colView.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
-
     self.layout.minimumLineSpacing = 0;
     self.layout.minimumInteritemSpacing = 0;
     self.layout.footerReferenceSize = CGSizeMake(0, 0);
@@ -202,8 +199,12 @@ static NSString * cellRes = @"preCellStr";
 
     //    CGFloat WIDTH = ([UIScreen mainScreen].bounds.size.width-self.layout.sectionInset.left-self.layout.sectionInset.right-self.layout.minimumInteritemSpacing)/1;
 //    CGFloat HEIGHT = ([UIScreen mainScreen].bounds.size.height-self.layout.sectionInset.top-self.layout.sectionInset.bottom-self.layout.minimumLineSpacing)/1;
+    
 
     self.layout.itemSize = CGSizeMake(self.frame.size.width, self.frame.size.height);
+//    [self.colView.collectionViewLayout layoutAttributesForElementsInRect:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+    self.colView.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
+
     self.colView.collectionViewLayout = self.layout;
     [self.layout prepareLayout];
 
@@ -212,6 +213,12 @@ static NSString * cellRes = @"preCellStr";
     [self.colView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:NO];
 
 }
+//这个方法中返回我们的布局数组
+-(NSArray<UICollectionViewLayoutAttributes *> *)layoutAttributesForElementsInRect:(CGRect)rect{
+    
+    return [NSArray array];
+}
+
 
 
 @end
